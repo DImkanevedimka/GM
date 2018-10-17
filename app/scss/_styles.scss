@@ -1,0 +1,140 @@
+.container {
+  width: 100%;
+  max-width: 1170px;
+  padding-left: 15px;
+  padding-right: 15px;
+  box-sizing: border-box;
+  margin: 0 auto;
+
+  @include respond-to(xs) {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+.video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.header {
+  position: relative;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0.45;
+    background: #282828;
+  }
+}
+
+.h1 {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  transform: translateY(-50%);
+  color: #fff;
+
+  @include respond-to(xs) {
+    font-size: 30px;
+  }
+}
+
+.footer {
+  border-top: 1px solid #e5e5e5;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+.main {
+
+  &-content {
+    padding-top: 50px;
+    display: flex;
+    justify-content: space-between;
+
+    @include respond-to(sm) {
+      flex-direction: column;
+    }
+  }
+
+  &-part {
+    width: 50%;
+    box-sizing: border-box;
+
+    @include respond-to(sm) {
+      width: 100%;
+    }
+  }
+
+  &-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include respond-to(sm) {
+      align-items: flex-start;
+    }
+  }
+
+  &-left {
+    padding-left: 20px;
+    padding-right: 20px;
+
+    @include respond-to(sm) {
+      border-bottom: 1px solid #e5e5e5;
+    }
+
+    & p {
+      text-indent: 20px;
+      padding-bottom: 20px;
+
+      &::first-letter {
+        color: red;
+      }
+    }
+  }
+
+  &-form {
+    width: 50%;
+    border: 1px solid #e3e3e3;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 15px;
+
+    @include respond-to(sm) {
+      border: none;
+    }
+
+    @include respond-to(xs) {
+      width: 100%;
+
+    }
+  }
+
+  &__label {
+    display: inline-block;
+    margin-bottom: 5px;
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+
+    &-container {
+      padding-bottom: 12px;
+    }
+  }
+
+  &__submit {
+    display: block;
+    width: 100px;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+}
